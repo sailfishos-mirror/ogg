@@ -312,7 +312,7 @@ int ogg_stream_iovecin(ogg_stream_state *os, ogg_iovec_t *iov, int count,
 
   for (i = 0; i < count; ++i) {
     memcpy(os->body_data+os->body_fill, iov[i].iov_base, iov[i].iov_len);
-    os->body_fill += (int)iov[i].iov_len;
+    os->body_fill += (long)iov[i].iov_len;
   }
 
   /* Store lacing vals for this packet */
